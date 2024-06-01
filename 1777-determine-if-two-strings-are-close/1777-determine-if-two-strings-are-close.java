@@ -11,11 +11,12 @@ class Solution {
         HashMap<Character,Integer> map2 = new HashMap<>();
         for(char c:word2.toCharArray())map2.put( c , map2.getOrDefault(c,0)+1 );
 
-        for(char c: word2.toCharArray()){
-            if(!map1.containsKey(c))return false;
-        }
+        // for(char c: word2.toCharArray()){
+        //     if(!map1.containsKey(c))return false;
+        // }
         System.out.println(ocuur);
         for(Character i:map2.keySet()){
+            if(!map1.containsKey(i))return false;
             Integer val = map2.get(i);
             if(ocuur.containsKey(val) && ocuur.get(val)>0 ){
                 ocuur.put( val , ocuur.get(val)-1 );
